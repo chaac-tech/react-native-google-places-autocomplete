@@ -684,6 +684,7 @@ export default class GooglePlacesAutocomplete extends Component {
             {this._renderLeftButton()}
             <TextInput
               ref="textInput"
+              editable={this.props.disableTextInput}
               returnKeyType={this.props.returnKeyType}
               autoFocus={this.props.autoFocus}
               style={[this.props.suppressDefaultStyles ? {} : defaultStyles.textInput, this.props.styles.textInput]}
@@ -709,6 +710,7 @@ export default class GooglePlacesAutocomplete extends Component {
 
 GooglePlacesAutocomplete.propTypes = {
   placeholder: PropTypes.string,
+  disableTextInput: PropTypes.bool,
   placeholderTextColor: PropTypes.string,
   underlineColorAndroid: PropTypes.string,
   returnKeyType: PropTypes.string,
@@ -751,6 +753,7 @@ GooglePlacesAutocomplete.propTypes = {
 }
 GooglePlacesAutocomplete.defaultProps = {
   placeholder: 'Search',
+  disableTextInput: true,
   placeholderTextColor: '#A8A8A8',
   isRowScrollable: true,
   underlineColorAndroid: 'transparent',
